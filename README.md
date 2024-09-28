@@ -1,2 +1,3 @@
 # pms-app
-PMS React Application
+
+PMS Angular Application

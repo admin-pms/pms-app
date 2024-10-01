@@ -39,12 +39,16 @@ export class SpService {
   }
 
   get siteURL() {
-    const index =
-      window.location.href.toLowerCase().indexOf('sitepages') != -1
-        ? window.location.href.toLowerCase().indexOf('sitepages')
-        : window.location.href.toLowerCase().indexOf('siteassets');
-    return window.location.href.substring(0, index);
-    // return 'https://prakritimarine.sharepoint.com/';
+    const prod = false;
+    if(prod) {
+      const index =
+        window.location.href.toLowerCase().indexOf('sitepages') != -1
+          ? window.location.href.toLowerCase().indexOf('sitepages')
+          : window.location.href.toLowerCase().indexOf('siteassets');
+      return window.location.href.substring(0, index);
+    } else {
+      return 'https://prakritimarine.sharepoint.com/sites/pmspvtltd/';
+    }
   }
 
   getFormDigest(siteName: string = this.siteURL): Observable<any> {
